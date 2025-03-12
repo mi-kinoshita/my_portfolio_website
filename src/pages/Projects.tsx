@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
 import projects from "../data/projets";
 
 export default function Projects() {
+  useEffect(() => {
+    // ページ遷移時にスクロール位置をトップにリセット
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <main className="pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +50,7 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 justify-between">
                     <Link
                       to={`/projects/${project.id}`}
                       className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 font-medium"

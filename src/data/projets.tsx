@@ -19,7 +19,7 @@ const projects: Project[] = [
     description:
       "An intuitive email builder powered by AI to help create professional emails quickly and efficiently.",
     image: "/swiftmail_ai_ss.png",
-    tags: ["Next.js", "Convex", "AI Integration", "Tailwind CSS"],
+    tags: ["Next.js", "Convex", "AI Integration"],
     link: "https://ai-email-builder-omega.vercel.app/",
     fullDescription: `
       The AI Email Builder is a sophisticated tool that combines artificial intelligence with user-friendly interface design

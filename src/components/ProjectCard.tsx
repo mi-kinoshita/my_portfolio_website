@@ -14,6 +14,8 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
+  console.log("Project Link:", project.link);
+
   return (
     <div className="bg-white dark:bg-neutral-800 rounded-lg shadow-lg overflow-hidden">
       <img
@@ -25,16 +27,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <h3 className="text-xl font-bold text-neutral-900 dark:text-neutral-50">
           {project.title}
         </h3>
-        <div className="flex flex-wrap gap-2 mt-2 mb-2">
+        <div className="flex overflow-x-auto gap-2 mt-2 mb-5 scrollbar-hide">
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm"
+              className="px-3 py-1 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full text-sm whitespace-nowrap"
             >
               {tag}
             </span>
           ))}
         </div>
+
         <p className="text-neutral-600 dark:text-neutral-300 mt-2">
           {project.description}
         </p>
@@ -45,7 +48,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           >
             View Details
           </Link>
-          {project.link && (
+          {project.link ? (
             <a
               href={project.link}
               target="_blank"
@@ -54,7 +57,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             >
               Live Demo <ExternalLink size={16} className="ml-1" />
             </a>
-          )}
+          ) : null}
         </div>
       </div>
     </div>
